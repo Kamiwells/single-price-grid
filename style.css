@@ -1,0 +1,168 @@
+/* Fonts */
+@font-face {
+    font-display: swap;
+    font-family: Karla;
+    font-weight: 400;
+    font-style: normal;
+    src: url(Fonts/karla-v33-latin-regular.woff2);
+}
+@font-face {
+    font-display: swap;
+    font-family: Karla-thin;
+    font-weight: 200;
+    font-style: normal;
+    src: url(Fonts/karla-v33-latin-200.woff2);
+}
+@font-face {
+    font-display: swap;
+    font-family: Karla-bold;
+    font-weight: 700;
+    font-style: normal;
+    src: url(Fonts/karla-v33-latin-700.woff2);
+}
+/* resets */
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img,
+video,
+picture{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+li{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+/* Custom Properties */
+:root{
+    --white: hsl(0, 0%, 100%);
+    --Teal-100: hsl(204, 43%, 93%);
+    /* --Teal-400: hsl(172, 100%, 40%); */
+    --Teal-400: hsl(179, 57%, 49%);
+    --Teal-500: hsl(179, 62%, 43%);
+    --Gray-500: hsl(218, 22%, 67%);
+    --Green-400: hsl(71, 73%, 54%);
+    --box-shadow-colour: 0px 8px 10px 1px hsla(170, 75%, 36%, 0.664);
+    --box-shadow-colour-2: 0px 8px 15px -4px rgba(49, 74, 112, 0.51);
+}
+/* Single Price Grid */
+body{
+    font-family: 'Karla', sans-serif;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-block-size: 100svh;
+    min-block-size: 100vh;     /* Fall Back*/
+    color: var(--Gray-500);
+    background: var(--Teal-100);
+}
+.single-price-grid{
+    margin-block: 4rem;
+    display: grid;
+    padding-inline: 2.5rem;
+}
+/* General card style*/
+.single-price-grid__card{
+    background: var(--white);
+    max-width: 77rem;
+    padding: 2.5rem;
+}
+.single-price-grid__card h1{
+    font-size: 2.2rem;
+    margin-block-end: 1.7rem;
+}
+.single-price-grid__card h2{
+    font-size: 1.6rem;
+    color: var(--Green-400);
+    margin-block-end: 1.5rem;
+}
+/* first card */
+.card1{
+    line-height: 1.6;
+    padding-block-end: 4rem;
+    border-radius: 1rem 1rem 0 0;
+}
+.card1 h1{
+    color: var(--Teal-500);
+}
+/* second card */
+.card2{
+    background: var(--Teal-500);
+    color: var(--Teal-100);
+}
+.card2-cost__span{
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    padding-inline-end: 1rem;
+}
+.card2__text-color{
+    font-family: 'Karla-thin', sans-serif;
+}
+.single-price-grid__sub-price >*{
+    display: flex;
+    align-items: center;
+    margin-block-end: 1rem;
+}
+.single-price-grid__button{
+    width: 30rem;
+    font-size: 1.7rem;
+    text-align: center;
+    background: var(--Green-400);
+    padding: 1.7rem;
+    border-radius: .7rem;
+    margin-block-start: 3rem;
+    font-weight: bold;
+    box-shadow: var(--box-shadow-colour);
+}
+/* third card */
+.card3{
+    background: var(--Teal-400);
+    color: var(--Teal-100);
+    line-height: 1.5;
+    color: var(--white);
+    border-radius: 0 0 1rem 1rem;
+}
+/* media Tablet*/
+@media (min-width:43rem) {
+    .single-price-grid{
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .single-price-grid__card{
+        padding-inline: 3rem;
+    }
+    .card1{
+        grid-column: span 2;
+        padding-inline-end: 15rem;
+        box-shadow: var(--box-shadow-colour-2);
+    }
+    .card2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom-left-radius: 1rem ;
+    }
+    .card3{
+        font-family: 'Karla-thin', sans-serif;
+        font-size: 1.5rem;
+        border-radius: 0 0 1rem 0;
+    }
+}
+@media (min-width:64rem) {
+    .single-price-grid__card{
+        padding: 4rem;
+    }
+}
+
